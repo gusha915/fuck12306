@@ -1222,7 +1222,7 @@ def resign(resign_train_code, resign_train_date, ft=None, train_ft=None):
 
 
 if __name__ == "__main__":
-	ACCOUNT = "xxoo@qq.com"
+	ACCOUNT = "xxxx@qq.com"
 	PASSWORD = "password"
 	# 刷票
 	# train_date 出发时间
@@ -1231,7 +1231,7 @@ if __name__ == "__main__":
 	# user_idcard 身份证号码
 	# ft 座位类型 目前只支持：硬座 硬卧 软卧 一等座 二等座
 	# train_ft 车次
-	buy({"train_date": "2018-01-18", "from_station_name": "深圳", "to_station_name": "惠州", "user_idcard": ""}, ft=["二等座"])  # , train_ft=["D2322"]
+	buy({"train_date": "2018-02-09", "from_station_name": "深圳", "to_station_name": "惠州", "user_idcard": ""}, ft=["硬座","硬卧","二等座"])  # , train_ft=["D2322"]
 
 	# 改签
 	# resign("K101", "2017-01-11", ft=["二等座", "硬座"], train_ft=["K101"])

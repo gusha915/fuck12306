@@ -54,7 +54,7 @@ def saveinfile(base, filename, content):
 
 def getstations():
 	global stations
-	f = open("/Users/ruochenxing/Desktop/projects/python-spider/simutil/other/stations.txt")
+	f = open("/Users/winter-pc/Desktop/projects/fuck12306/stations.txt")
 	content = f.read()
 	infos = content.split("@")
 	for info in infos:
@@ -74,19 +74,19 @@ def querystationcode(name):
 
 
 def checkseat1(detail, ft):
-	if 'zy' in ft and detail[31] != '空' and detail[31] != '无':
+	if 'zy' in ft and detail[31] != u'空' and detail[31] != u'无':
 		return True
-	if 'ze' in ft and detail[30] != '空' and detail[30] != '无':
+	if 'ze' in ft and detail[30] != u'空' and detail[30] != u'无':
 		return True
-	if 'rw' in ft and detail[23] != '空' and detail[23] != '无':
+	if 'rw' in ft and detail[23] != u'空' and detail[23] != u'无':
 		return True
-	if 'yw' in ft and detail[28] != '空' and detail[28] != '无':
+	if 'yw' in ft and detail[28] != u'空' and detail[28] != u'无':
 		return True
-	if 'rz' in ft and detail[25] != '空' and detail[25] != '无':
+	if 'rz' in ft and detail[25] != u'空' and detail[25] != u'无':
 		return True
-	if 'yz' in ft and detail[29] != '空' and detail[29] != '无':
+	if 'yz' in ft and detail[29] != u'空' and detail[29] != u'无':
 		return True
-	if 'wz' in ft and detail[26] != '空' and detail[26] != '无':
+	if 'wz' in ft and detail[26] != u'空' and detail[26] != u'无':
 		return True
 	return False
 
@@ -119,14 +119,12 @@ def parsequery1(response, ft=None):
 		detail = info.split("|")
 		canbuy = 0
 		size = len(detail)
-		count = 0
 		for i in range(0, size):
 			if len(detail[i]) == 0:
-				detail[i] = '空'
+				detail[i] = u'空'
 		if ft is not None and checkseat1(detail, ft=converttocode(ft)):
 			canbuy = 1
 		if canbuy == 1 or ft is None:
-			count += 1
 			table.add_row([detail[3], detail[4], detail[5], detail[8], detail[9], detail[10], detail[32], detail[31],
 						   detail[30], detail[22], detail[23], detail[28], detail[25], detail[29], detail[26]])
 		if canbuy == 1:
